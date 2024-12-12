@@ -38,10 +38,10 @@ class Controller {
     this.event.checkDiscountForDay(total);
     const discountTotal = this.event.getTotalDiscountMoney();
     this.outputView.printNotDiscount(total);
+    this.outputView.printPlus(this.event.checkPlusMenu());
     this.outputView.printEvent(this.event.getEventTotal());
     this.outputView.printDisCountTotal(this.event.getTotalDiscountMoney());
     this.outputView.printPurchaseMoney(total - discountTotal);
-    this.outputView.printPlus(this.event.checkPlusMenu());
     this.outputView.printBadge(this.event.checkBadge());
   }
 }

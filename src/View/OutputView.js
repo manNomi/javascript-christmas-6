@@ -30,6 +30,7 @@ const OutputView = {
   },
   printEvent(events) {
     this.print(OUTPUT_MESSAGES.PROMOTION_LIST_MESSAGE);
+    if (events.length === 0) this.print('없음');
     events.forEach((event) => {
       this.print(`${event.name}: ${this.formatMoney(-event.discount)}`);
     });
