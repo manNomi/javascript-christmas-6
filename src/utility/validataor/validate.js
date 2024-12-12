@@ -14,9 +14,12 @@ export const validate = (input, patternKey) => {
 };
 
 export const validateMenu = (parsedMenu, isInMenu) => {
+  let isOnlyDrink = true;
   parsedMenu.forEach((menu) => {
+    if (menu.name !== '음료') isOnlyDrink = false;
     if (!isInMenu(menu)) throw new Error(ERROR_MESSAGES.INVALID_ORDER);
   });
+  if (isOnlyDrink) throw new Error(ERROR_MESSAGES.INVALID_INPUT_DRINK);
   return parsedMenu;
 };
 

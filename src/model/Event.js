@@ -15,7 +15,8 @@ export default class Event {
     return true;
   }
 
-  checkDiscountForDay() {
+  checkDiscountForDay(total) {
+    if (total <= 10000) return;
     this.checkCrithmasTheDay();
     this.checkNotHoliday();
     this.checkHoliday();

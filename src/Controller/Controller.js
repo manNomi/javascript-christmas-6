@@ -24,7 +24,6 @@ class Controller {
     this.outputView.printMenu(menuWithPriceCategory);
     this.cart = new Cart(menuWithPriceCategory);
     this.event = new Event(inputDate, menuWithPriceCategory);
-    this.event.checkDiscountForDay();
     this.printResult();
   }
 
@@ -36,6 +35,7 @@ class Controller {
 
   printResult() {
     const total = this.cart.getTotal();
+    this.event.checkDiscountForDay(total);
     const discountTotal = this.event.getTotalDiscountMoney();
     this.outputView.printNotDiscount(total);
     this.outputView.printEvent(this.event.getEventTotal());
