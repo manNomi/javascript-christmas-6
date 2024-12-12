@@ -14,8 +14,9 @@ export const validate = (input, patternKey) => {
 };
 
 export const validateNumber = (input, low, high) => {
-  if (!Number.isNaN(input)) throw new Error(ERROR_MESSAGES.INVALID_DATE);
   const number = parseInt(input, 10);
+  if (isNaN(number)) throw new Error(ERROR_MESSAGES.INVALID_DATE);
+  console.log(number);
   if (number < low || number > high)
     throw new Error(ERROR_MESSAGES.INVALID_DATE);
 };
