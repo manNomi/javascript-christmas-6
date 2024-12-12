@@ -12,12 +12,12 @@
 [X] - error Message 작성 -> config/errorMessage.js
 [X] - print Start()
 [X] - 식당 방문 날짜 입력 받기 (int 1~31)
-[] - 메뉴 주문 받기
-->[] parsing comma , - 함수 작성
--> [] - Menu.isInMenu : 화살표함수로 만들것 validate에 넣기
+[X] - 메뉴 주문 받기
+->[X] parsing comma , - 함수 작성
+-> [X] - Menu.isInMenu : 화살표함수로 만들것 validate에 넣기
 메뉴 형식 [{name:"",price:""},]
 -> 음료만 주문 불가 /한번에 최대 20개만 가능
-[] - Cart 클래스에 값 저장
+[X] - Cart 클래스에 값 저장
 
 [] - cart.getCart 로 가져오고
 [] - Event 클래스 만들기 - date 넣기

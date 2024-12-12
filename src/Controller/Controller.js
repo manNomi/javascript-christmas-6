@@ -3,12 +3,14 @@ import InputView from '../View/InputView.js';
 import fetchFile from '../utility/readFile/readFile.js';
 import { parsingMenu } from '../utility/parser/parsing.js';
 import Menu from '../model/Menu.js';
+import Cart from '../model/Cart.js';
 
 class Controller {
   constructor() {
     this.outputView = OutputView;
     this.inputView = InputView;
     this.menu = null;
+    this.cart = null;
   }
 
   async run() {
@@ -16,6 +18,7 @@ class Controller {
     this.outputView.printStart();
     const inputDate = await this.inputView.readDate();
     const inputMenu = await this.inputView.readMenu(this.menu.isInMenu);
+    this.cart = new Cart();
   }
 
   setMenu() {
