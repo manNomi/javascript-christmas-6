@@ -24,6 +24,7 @@ class Controller {
     this.outputView.printMenu(menuWithPrice);
     this.cart = new Cart(menuWithPrice);
     this.event = new Event(inputDate, menuWithPrice);
+    this.event.checkDiscountForDay();
     this.printResult();
   }
 

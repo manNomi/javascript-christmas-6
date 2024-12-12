@@ -15,6 +15,13 @@ export default class Event {
     return true;
   }
 
+  checkDiscountForDay() {
+    this.checkCrithmasTheDay();
+    this.checkNotHoliday();
+    this.checkHoliday();
+    this.checkSpecialDay();
+  }
+
   checkCrithmasTheDay() {
     const startDate = new Date('2023-12-1');
     const endDate = new Date('2023-12-1');
