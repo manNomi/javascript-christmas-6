@@ -3,8 +3,10 @@
 ### 기능 별 분리
 
 [X] - 메뉴 객체화 -> config/menuList.js
-[] - 이벤트 객체화 -> config/eventList.js -> 이벤트 클래스 만들거를 염두해서 작성 -> 기간 설정
-[] - Menu 클래스
+
+<!-- [] - 이벤트 객체화 -> config/eventList.js -> 이벤트 클래스 만들거를 염두해서 작성 -> 기간 설정 -->
+
+[X] - Menu 클래스
 [] - input Message 작성 -> config/inputMessage.js
 [] - output Message 작성 -> config/outputMessage.js
 [] - error Message 작성 -> config/errorMessage.js
