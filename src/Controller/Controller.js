@@ -1,18 +1,20 @@
-import InputService from '../Service/InputService.js';
-import OutputService from '../Service/OutPutService.js';
+import OutputView from '../View/OutputView.js';
+import InputView from '../View/InputView.js';
 import fetchFile from '../utility/readFile/readFile.js';
 import { parsingMenu } from '../utility/parser/parsing.js';
 import Menu from '../model/Menu.js';
 
 class Controller {
   constructor() {
-    this.inputService = new InputService();
-    this.outputService = new OutputService();
+    this.outputView = new OutputView();
+    this.inputView = new InputView();
     this.menu = null;
   }
 
   async run() {
     this.setMenu();
+    this.outputView.printStart();
+    this.inputView.readDate();
   }
 
   setMenu() {

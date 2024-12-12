@@ -10,7 +10,7 @@
 [X] - input Message 작성 -> config/inputMessage.js
 [X] - output Message 작성 -> config/outputMessage.js
 [X] - error Message 작성 -> config/errorMessage.js
-[] - print Start()
+[X] - print Start()
 [] - 식당 방문 날짜 입력 받기 (int 1~31)
 [] - 메뉴 주문 받기
 ->[] parsing comma , - 함수 작성

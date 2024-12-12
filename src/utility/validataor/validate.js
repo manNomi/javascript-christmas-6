@@ -11,3 +11,10 @@ export const validate = (input, patternKey) => {
   // 검증 성공 시 true 반환
   return true;
 };
+
+export const validateNumber = (input, low, high) => {
+  if (!Number.isNaN(input)) return false;
+  const number = parseInt(input, 10);
+  if (number < low || number > high) return false;
+  return true;
+};
