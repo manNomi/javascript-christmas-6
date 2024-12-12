@@ -1,4 +1,12 @@
 const regexPatterns = {
+  EXTRACT_BETWEEN_ANGLE_BRACKETS: {
+    regex: /<([^>]+)>/,
+    description: '[문자열] "<>" 사이에 있는 값을 추출',
+  },
+  EXTRACT_BETWEEN_ANGLE: {
+    regex: /(([^>]+))/,
+    description: '[문자열] "<>" 사이에 있는 값을 추출',
+  },
   EMPTY_STRING: {
     regex: /^$/,
     description: '[문자열] 빈 문자열 여부 확인',

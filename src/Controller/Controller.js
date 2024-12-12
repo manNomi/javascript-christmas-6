@@ -1,6 +1,7 @@
 import InputService from '../Service/InputService.js';
 import OutputService from '../Service/OutPutService.js';
 import fetchFile from '../utility/readFile/readFile.js';
+import { parsingMenu } from '../utility/parser/parsing.js';
 
 class Controller {
   constructor() {
@@ -10,7 +11,8 @@ class Controller {
 
   async run() {
     const menuText = fetchFile('menu.md');
-    console.log(menuText);
+    const menuList = parsingMenu(menuText);
+    console.log(menuList);
   }
 }
 

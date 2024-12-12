@@ -1,4 +1,4 @@
-import { OUTPUT_MESSAGE } from '../config/constant.js';
+import { OUTPUT_MESSAGES } from '../config/outputMessage.js';
 import print from '../View/print.js';
 
 export default class OutputService {
