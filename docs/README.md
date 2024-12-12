@@ -19,11 +19,13 @@
 -> 음료만 주문 불가 /한번에 최대 20개만 가능
 [X] - Cart 클래스에 값 저장
 
-[] - cart.getCart 로 가져오고
-[] - Event 클래스 만들기 - date 넣기
+[X] - cart.getCart 로 가져오고
+[X] - Event 클래스 만들기 - date 넣기
 
 메뉴 형식 [{name:"",price:"",discountPrice:""},]
-[] - event.apply()
+
+<!-- [] - event.apply() -->
+
 [X] - 예외 총주문 10000원 이상이면 이벤트 있음
 [X] - 이벤트의 resultEvent 값으로 할인 받을때마다 추가
 [{event:"크리스마스",discount:3000}]
@@ -33,26 +35,26 @@
 [X] - 특별 할인 - 별있는 날 1000원 할인
 [X] - 증정 이벤트 - 할인 전 금액 12만원 이상시 샴페인
 
-[] - print 혜택 미리보기
+[X] - print 혜택 미리보기
 
-[] - print 주문 메뉴
--> [] Menu.getMenu
--> [] outputView format
+[X] - print 주문 메뉴
+-> [X] Menu.getMenu
+-> [X] outputView format
 
-[] - print 총 주문 금액
-[] - Cart 클래스 getTotal()
+[X] - print 총 주문 금액
+[X] - Cart 클래스 getTotal()
 
-[] - print 증정메뉴
+[X] - print 증정메뉴
 -> event.getPlusEvent() 1 : 1개 0 : 없음 :format
 
-[] - print 총혜택
-[] - event.getTotalDiscount() resultEvent로 구하기
+[X] - print 총혜택
+[X] - event.getTotalDiscount() resultEvent로 구하기
 
-[] - pirnt 할인후 예상 금액
-[] - cart.getTotal()-event.getTotalDiscount()
+[X] - pirnt 할인후 예상 금액
+[X] - cart.getTotal()-event.getTotalDiscount()
 
-[] - pirnt 12월 이벤트 뱃지
-[] - event.getBadge() : format 없으면 없음
+[X] - pirnt 12월 이벤트 뱃지
+[X] - event.getBadge() : format 없으면 없음
 
 #### 이벤트 목표
 

@@ -61,7 +61,7 @@ export default class Event {
   checkPlusMenu(totalMoney) {
     if (totalMoney >= 120000) {
       this.evnetTotal.push({ discount: 25000, name: '증정 이벤트' });
-      return 1;
+      return '샴페인';
     }
     return 0;
   }
