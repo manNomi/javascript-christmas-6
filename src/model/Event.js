@@ -61,7 +61,7 @@ export default class Event {
 
   checkSpecialDay() {
     const crithMas = new Date('2024-12-25');
-    if (this.date.getDay() === 6 || this.date === crithMas) {
+    if (this.day.getDay() === 6 || this.day === crithMas) {
       const discount = 1000;
       this.evnetTotal.push({ discount, name: '특별할인' });
       return discount;
