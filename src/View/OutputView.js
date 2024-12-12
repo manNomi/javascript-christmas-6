@@ -21,8 +21,12 @@ const OutputView = {
   },
   printPlus(value) {
     this.print(OUTPUT_MESSAGES.PLUS_MESSAGE);
-    if (value === 0) this.print('없음');
+    if (value === 0) {
+      this.print('없음');
+      return null;
+    }
     this.print(value);
+    return null;
   },
   printEvent(events) {
     this.print(OUTPUT_MESSAGES.PROMOTION_LIST_MESSAGE);
@@ -35,7 +39,7 @@ const OutputView = {
     this.print(`${this.formatMoney(-discountMoney)}`);
   },
   printPurchaseMoney(total) {
-    this.print(OUTPUT_MESSAGES.PROMOTION_TOTAL_COUNT);
+    this.print(OUTPUT_MESSAGES.DISCOUNT_TOTAL_MESSAGE);
     this.print(`${this.formatMoney(total)}`);
   },
   printBadge(badge) {
