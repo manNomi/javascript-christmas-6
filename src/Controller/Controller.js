@@ -6,8 +6,8 @@ import Menu from '../model/Menu.js';
 
 class Controller {
   constructor() {
-    this.outputView = new OutputView();
-    this.inputView = new InputView();
+    this.outputView = OutputView;
+    this.inputView = InputView;
     this.menu = null;
   }
 

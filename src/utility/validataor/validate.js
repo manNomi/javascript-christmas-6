@@ -1,4 +1,5 @@
 import regexPatterns from './regexPatterns.js';
+import { ERROR_MESSAGES } from '../../config/errorMessage.js';
 
 export const validate = (input, patternKey) => {
   const { regex, description } = regexPatterns[patternKey];
@@ -13,8 +14,8 @@ export const validate = (input, patternKey) => {
 };
 
 export const validateNumber = (input, low, high) => {
-  if (!Number.isNaN(input)) return false;
+  if (!Number.isNaN(input)) throw new Error(ERROR_MESSAGES.INVALID_DATE);
   const number = parseInt(input, 10);
-  if (number < low || number > high) return false;
-  return true;
+  if (number < low || number > high)
+    throw new Error(ERROR_MESSAGES.INVALID_DATE);
 };
