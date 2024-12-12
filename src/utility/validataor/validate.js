@@ -17,14 +17,12 @@ export const validateMenu = (parsedMenu, isInMenu) => {
   parsedMenu.forEach((menu) => {
     if (!isInMenu(menu)) throw new Error(ERROR_MESSAGES.INVALID_ORDER);
   });
-  console.log(parsedMenu);
   return parsedMenu;
 };
 
 export const validateNumber = (input, low, high) => {
   const number = parseInt(input, 10);
   if (isNaN(number)) throw new Error(ERROR_MESSAGES.INVALID_DATE);
-  console.log(number);
   if (number < low || number > high)
     throw new Error(ERROR_MESSAGES.INVALID_DATE);
 };

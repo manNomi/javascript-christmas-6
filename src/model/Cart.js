@@ -10,8 +10,7 @@ export default class Menu {
   getTotal() {
     let total = 0;
     this.menuList.forEach((menu) => {
-      console.log(menu);
-      total += menu.price;
+      total += menu.price * menu.count;
     });
     return total;
   }

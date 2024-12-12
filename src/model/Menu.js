@@ -19,4 +19,28 @@ export default class Menu {
     });
     return check;
   }
+
+  setPriceMenu(cart) {
+    const newCart = [];
+    cart.forEach((menu) => {
+      this.menuList.forEach((menuWithCategory) => {
+        const check = this.checkPriceInt(menuWithCategory, menu);
+        if (check) {
+          newCart.push(check);
+        }
+      });
+    });
+    return newCart;
+  }
+
+  checkPriceInt(menuWithCategory, menu) {
+    let value = false;
+    menuWithCategory.menu.forEach((menuWithPrice) => {
+      if (menuWithPrice.name === menu.name) {
+        const priceInt = menuWithPrice.price.replace(',', '').replace('원', '');
+        value = { ...menu, price: parseInt(priceInt, 10) };
+      }
+    });
+    return value;
+  }
 }

@@ -6,7 +6,6 @@ const OutputView = {
     Console.print(message);
   },
   printMenu(menuList) {
-    console.log(menuList);
     this.print(OUTPUT_MESSAGES.ORDER_MESSAGE);
     menuList.forEach((menu) => {
       this.print(`${menu.name} ${menu.count}개`);
@@ -22,21 +21,25 @@ const OutputView = {
   },
   printPlus(value) {
     this.print(OUTPUT_MESSAGES.PLUS_MESSAGE);
-    if (!value) this.print('없음');
+    if (value === 0) this.print('없음');
     this.print(value);
   },
   printEvent(events) {
+    this.print(OUTPUT_MESSAGES.PROMOTION_LIST_MESSAGE);
     events.forEach((event) => {
-      this.print(`${event.name}: -${this.formatMoney(event.discount)}원`);
+      this.print(`${event.name}: ${this.formatMoney(-event.discount)}원`);
     });
   },
   printDisCountTotal(discountMoney) {
-    this.print(`-${this.formatMoney(discountMoney)}원`);
+    this.print(OUTPUT_MESSAGES.PROMOTION_TOTAL_COUNT);
+    this.print(`${this.formatMoney(-discountMoney)}`);
   },
   printPurchaseMoney(total) {
-    this.print(`${this.formatMoney(total)}원`);
+    this.print(OUTPUT_MESSAGES.PROMOTION_TOTAL_COUNT);
+    this.print(`${this.formatMoney(total)}`);
   },
   printBadge(badge) {
+    this.print(OUTPUT_MESSAGES.BADGE_MESSAGE);
     if (badge) {
       this.print(badge);
       return;
@@ -44,6 +47,7 @@ const OutputView = {
     this.print('없음');
   },
   formatMoney(money) {
+    if (money === 0) return '0원';
     return `${money.toLocaleString()}원`;
   },
 };
