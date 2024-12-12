@@ -1,7 +1,12 @@
 import { Console } from '@woowacourse/mission-utils';
 
 import { INPUT_MESSAGES } from '../config/inputMessage.js';
-import { validateNumber } from '../utility/validataor/validate.js';
+import {
+  validateNumber,
+  validateMenu,
+} from '../utility/validataor/validate.js';
+import { parseInputMenu } from '../utility/parser/parsing.js';
+
 import OutputView from './OutputView.js';
 
 const InputView = {
@@ -12,6 +17,15 @@ const InputView = {
     this.processInput(INPUT_MESSAGES.DATE, (inputNumber) => {
       validateNumber(inputNumber, 1, 31);
     });
+  },
+  async readMenu(isInMenu) {
+    this.processInput(
+      INPUT_MESSAGES.DATE,
+      (parsedMenu) => {
+        validateMenu(parsedMenu, isInMenu);
+      },
+      parseInputMenu,
+    );
   },
   async processInput(inputMessage, validate = () => true, parse = (x) => x) {
     while (true) {

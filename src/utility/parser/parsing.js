@@ -5,8 +5,21 @@
  */
 import regexPatterns from '../validataor/regexPatterns.js';
 
+export const parseInputMenu = (input) => {
+  const menuList = input.split(',');
+  const result = [];
+  menuList.forEach((menu) => {
+    const menuString = menu.split('-');
+    const name = menuString[0];
+    const price = menuString[1];
+    result.push({ name, price });
+  });
+  return result;
+};
+
 export const parseCommaSeparatedString = (str) =>
   str.split(',').map((item) => item.trim());
+
 export const parseCommaSeparatedInt = (str) =>
   str.split(',').map((item) => parseInt(item.trim(), 10));
 

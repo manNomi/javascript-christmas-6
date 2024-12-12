@@ -13,6 +13,12 @@ export const validate = (input, patternKey) => {
   return true;
 };
 
+export const validateMenu = (parsedMenu, isInMenu) => {
+  parsedMenu.forEach((menu) => {
+    if (!isInMenu(menu)) throw new Error(ERROR_MESSAGES.INVALID_ORDER);
+  });
+};
+
 export const validateNumber = (input, low, high) => {
   const number = parseInt(input, 10);
   if (isNaN(number)) throw new Error(ERROR_MESSAGES.INVALID_DATE);

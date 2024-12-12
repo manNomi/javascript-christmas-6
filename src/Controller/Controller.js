@@ -14,7 +14,8 @@ class Controller {
   async run() {
     this.setMenu();
     this.outputView.printStart();
-    this.inputView.readDate();
+    const inputDate = await this.inputView.readDate();
+    const inputMenu = await this.inputView.readMenu(this.menu.isInMenu);
   }
 
   setMenu() {
