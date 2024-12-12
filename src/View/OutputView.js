@@ -31,7 +31,7 @@ const OutputView = {
   printEvent(events) {
     this.print(OUTPUT_MESSAGES.PROMOTION_LIST_MESSAGE);
     events.forEach((event) => {
-      this.print(`${event.name}: ${this.formatMoney(-event.discount)}원`);
+      this.print(`${event.name}: ${this.formatMoney(-event.discount)}`);
     });
   },
   printDisCountTotal(discountMoney) {

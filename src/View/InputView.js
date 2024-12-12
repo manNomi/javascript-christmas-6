@@ -14,9 +14,9 @@ const InputView = {
     return await Console.readLineAsync(message);
   },
   async readDate() {
-    return await this.processInput(INPUT_MESSAGES.DATE, (inputNumber) => {
-      validateNumber(inputNumber, 1, 31);
-    });
+    return await this.processInput(INPUT_MESSAGES.DATE, (inputNumber) =>
+      validateNumber(inputNumber, 1, 31),
+    );
   },
   async readMenu(isInMenu) {
     return await this.processInput(

@@ -24,7 +24,7 @@ export default class Event {
 
   checkCrithmasTheDay() {
     const startDate = new Date('2023-12-1');
-    const endDate = new Date('2023-12-1');
+    const endDate = new Date('2023-12-25');
     if (this.day >= startDate && this.day <= endDate) {
       const discount = 1000 + (this.date - 1) * 100;
       this.evnetTotal.push({ discount, name: '크리스마스 디데이 할인' });
@@ -34,9 +34,11 @@ export default class Event {
   }
 
   checkNotHoliday() {
+    console.log(this.day);
     if (this.day.getDay() < 5) return 0;
     const desert = [];
     this.cart.forEach((menu) => {
+      console.log(menu.category);
       if (menu.category === '디저트') {
         desert.push(menu);
       }

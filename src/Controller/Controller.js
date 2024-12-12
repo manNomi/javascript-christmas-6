@@ -20,10 +20,10 @@ class Controller {
     this.outputView.printStart();
     const inputDate = await this.inputView.readDate();
     const inputMenu = await this.inputView.readMenu(this.menu.isInMenu);
-    const menuWithPrice = this.menu.setPriceMenu(inputMenu);
-    this.outputView.printMenu(menuWithPrice);
-    this.cart = new Cart(menuWithPrice);
-    this.event = new Event(inputDate, menuWithPrice);
+    const menuWithPriceCategory = this.menu.setPriceCategoryMenu(inputMenu);
+    this.outputView.printMenu(menuWithPriceCategory);
+    this.cart = new Cart(menuWithPriceCategory);
+    this.event = new Event(inputDate, menuWithPriceCategory);
     this.event.checkDiscountForDay();
     this.printResult();
   }

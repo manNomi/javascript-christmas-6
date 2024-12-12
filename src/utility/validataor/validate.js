@@ -25,4 +25,5 @@ export const validateNumber = (input, low, high) => {
   if (isNaN(number)) throw new Error(ERROR_MESSAGES.INVALID_DATE);
   if (number < low || number > high)
     throw new Error(ERROR_MESSAGES.INVALID_DATE);
+  return input;
 };

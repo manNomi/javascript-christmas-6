@@ -20,7 +20,7 @@ export default class Menu {
     return check;
   }
 
-  setPriceMenu(cart) {
+  setPriceCategoryMenu(cart) {
     const newCart = [];
     cart.forEach((menu) => {
       this.menuList.forEach((menuWithCategory) => {
@@ -35,10 +35,14 @@ export default class Menu {
 
   checkPriceInt(menuWithCategory, menu) {
     let value = false;
-    menuWithCategory.menu.forEach((menuWithPrice) => {
+    menuWithCategory.menu.forEach((menuWithPrice, index) => {
       if (menuWithPrice.name === menu.name) {
         const priceInt = menuWithPrice.price.replace(',', '').replace('원', '');
-        value = { ...menu, price: parseInt(priceInt, 10) };
+        value = {
+          ...menu,
+          category: menuWithCategory.category,
+          price: parseInt(priceInt, 10),
+        };
       }
     });
     return value;
