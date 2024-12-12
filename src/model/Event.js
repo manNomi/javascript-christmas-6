@@ -34,29 +34,35 @@ export default class Event {
   }
 
   checkNotHoliday() {
-    console.log(this.day);
     if (this.day.getDay() < 5) return 0;
     const desert = [];
     this.cart.forEach((menu) => {
-      console.log(menu.category);
       if (menu.category === '디저트') {
         desert.push(menu);
       }
     });
-    const discount = desert.length * 2023;
+    const discount = this.addList(desert) * 2023;
     this.evnetTotal.push({ discount, name: '평일할인' });
     return discount;
+  }
+
+  addList(list) {
+    let total = 0;
+    list.forEach((menu) => {
+      total += menu;
+    });
+    return total;
   }
 
   checkHoliday() {
     if (this.day.getDay() >= 5) return 0;
     const main = [];
     this.cart.forEach((menu) => {
-      if (menu.category === '디저트') {
-        main.push(menu);
+      if (menu.category === '메인') {
+        main.push(menu.count);
       }
     });
-    const discount = main.length * 2023;
+    const discount = this.addList(main) * 2023;
     this.evnetTotal.push({ discount, name: '주말할인' });
     return discount;
   }
