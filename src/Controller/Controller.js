@@ -23,12 +23,24 @@ class Controller {
     this.outputView.printMenu();
     this.cart = new Cart(inputMenu);
     this.event = new Event(inputDate, this.cart.getCart());
+    this.printResult();
   }
 
   setMenu() {
     const menuText = fetchFile('menu.md');
     const menuList = parsingMenu(menuText);
     this.menu = new Menu(menuList);
+  }
+
+  printResult() {
+    const total = this.cart.getTotal();
+    const discountTotal = this.event.getTotalDiscountMoney();
+    this.outputView.printNotDiscount(total);
+    this.outputView.printEvent(this.event.getEventTotal());
+    this.outputView.printDisCountTotal(this.event.getTotalDiscountMoney());
+    this.outputView.printPurchaseMoney(total - discountTotal);
+    this.outputView.printPlus(this.event.checkPlusMenu());
+    this.outputView.printBadge(this.event.checkBadge());
   }
 }
 

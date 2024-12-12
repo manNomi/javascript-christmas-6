@@ -6,6 +6,10 @@ export default class Event {
     this.evnetTotal = [];
   }
 
+  getEventTotal() {
+    return this.evnetTotal;
+  }
+
   isCanEvnet(totalMoney) {
     if (totalMoney <= 10000) return false;
     return true;

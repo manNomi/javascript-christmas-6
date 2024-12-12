@@ -6,4 +6,12 @@ export default class Menu {
   getCart() {
     return this.menuList;
   }
+
+  getTotal() {
+    let total = 0;
+    this.menuList.forEach((menu) => {
+      total += menu.price;
+    });
+    return total;
+  }
 }
