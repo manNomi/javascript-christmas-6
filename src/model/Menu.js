@@ -3,11 +3,20 @@ export default class Menu {
     this.menuList = menuList;
   }
 
-  isInMenu = (name) => {
-    let isIn = false;
-    this.menuList.forEach((menu) => {
-      if (menu.includes(name)) isIn = true;
+  isInMenu = (menu) => {
+    const isIn = [];
+    this.menuList.forEach((menuWithCategory) => {
+      isIn.push(this.checkMenu(menuWithCategory, menu.name));
     });
-    return isIn;
+
+    return isIn.includes(true);
   };
+
+  checkMenu(menuWithCategory, name) {
+    let check = false;
+    menuWithCategory.menu.forEach((menuWithPrice) => {
+      if (menuWithPrice.name === name) check = true;
+    });
+    return check;
+  }
 }

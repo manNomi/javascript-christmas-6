@@ -10,9 +10,9 @@ export const parseInputMenu = (input) => {
   const result = [];
   menuList.forEach((menu) => {
     const menuString = menu.split('-');
-    const name = menuString[0];
-    const price = menuString[1];
-    result.push({ name, price });
+    const name = menuString[0].trim();
+    const count = menuString[1].trim();
+    result.push({ name, count });
   });
   return result;
 };
@@ -38,8 +38,8 @@ export const parsingMenu = (menu) => {
     const menuText = textLine.split('),');
     const menuWithPriceResult = [];
     menuText.forEach((menuWithPrice) => {
-      const name = menuWithPrice.split('(')[0];
-      const price = menuWithPrice.split('(')[1];
+      const name = menuWithPrice.split('(')[0]?.trim();
+      const price = menuWithPrice.split('(')[1]?.trim();
       if (!name || !price) return;
       menuWithPriceResult.push({ name, price });
     });
