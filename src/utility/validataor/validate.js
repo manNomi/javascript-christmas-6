@@ -17,6 +17,8 @@ export const validateMenu = (parsedMenu, isInMenu) => {
   parsedMenu.forEach((menu) => {
     if (!isInMenu(menu)) throw new Error(ERROR_MESSAGES.INVALID_ORDER);
   });
+  console.log(parsedMenu);
+  return parsedMenu;
 };
 
 export const validateNumber = (input, low, high) => {

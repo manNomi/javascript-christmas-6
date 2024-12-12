@@ -21,9 +21,7 @@ const InputView = {
   async readMenu(isInMenu) {
     return await this.processInput(
       INPUT_MESSAGES.MENU,
-      (parsedMenu) => {
-        validateMenu(parsedMenu, isInMenu);
-      },
+      (parsedMenu) => validateMenu(parsedMenu, isInMenu),
       parseInputMenu,
     );
   },

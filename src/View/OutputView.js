@@ -6,6 +6,7 @@ const OutputView = {
     Console.print(message);
   },
   printMenu(menuList) {
+    console.log(menuList);
     this.print(OUTPUT_MESSAGES.ORDER_MESSAGE);
     menuList.forEach((menu) => {
       this.print(`${menu.name} ${menu.count}개`);
