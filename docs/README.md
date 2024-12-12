@@ -7,9 +7,9 @@
 <!-- [] - 이벤트 객체화 -> config/eventList.js -> 이벤트 클래스 만들거를 염두해서 작성 -> 기간 설정 -->
 
 [X] - Menu 클래스
-[] - input Message 작성 -> config/inputMessage.js
-[] - output Message 작성 -> config/outputMessage.js
-[] - error Message 작성 -> config/errorMessage.js
+[X] - input Message 작성 -> config/inputMessage.js
+[X] - output Message 작성 -> config/outputMessage.js
+[X] - error Message 작성 -> config/errorMessage.js
 [] - print Start()
 [] - 식당 방문 날짜 입력 받기 (int 1~31)
 [] - 메뉴 주문 받기
